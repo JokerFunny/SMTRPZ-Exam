@@ -2,22 +2,22 @@
 using System;
 using System.Collections.Generic;
 
-namespace DataAccessAbstractions
+namespace BusinessLogicAbstractions
 {
     /// <summary>
-    /// Repository interface for <see cref="Group"/>
+    /// Service interface for <see cref="Group"/>
     /// </summary>
-    public interface IGroupRepository
+    public interface IGroupService
     {
         /// <summary>
-        /// Gets all Groups
+        /// Gets all Groups from repo
         /// </summary>
         List<Group> GetAll();
 
         /// <summary>
-        /// Adds new Group
+        /// Adds new group
         /// </summary>
-        /// <param name="newGroup">New Group</param>
+        /// <param name="newGroup">New group</param>
         /// <returns>
         /// true - if successfully, 
         /// otherwise - false
@@ -54,5 +54,17 @@ namespace DataAccessAbstractions
         /// otherwise - false
         /// </returns>
         bool AddUser(Guid groupId, User user);
+
+        /// <summary>
+        /// Change group from old to new for target user
+        /// </summary>
+        /// <param name="newGroupId">New group id</param>
+        /// <param name="oldGroupId">Old group id</param>
+        /// <param name="userId">Target user id</param>
+        /// <returns>
+        /// true - if successfully, 
+        /// otherwise - false
+        /// </returns>
+        bool ChangeGroupForUser(Guid newGroupId, Guid oldGroupId, Guid userId);
     }
 }
