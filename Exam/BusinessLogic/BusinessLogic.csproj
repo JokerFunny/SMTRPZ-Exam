@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicAbstractions\BusinessLogicAbstractions.csproj" />
+    <ProjectReference Include="..\DataAccessAbstractions\DataAccessAbstractions.csproj" />
+  </ItemGroup>
+
 </Project>
